@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import PopupWithForm from './PopupWithForm.js';
 
 function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar }) {
-    const avatarRef = React.useRef();
+    const avatarRef = useRef();
 
     function handleSubmit(evt) {
         // Запрещаем браузеру переходить по адресу формы
@@ -11,7 +11,7 @@ function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar }) {
         onUpdateAvatar({ avatar: avatarRef.current.value });
     }
 
-    React.useEffect(() => {
+    useEffect(() => {
         avatarRef.current.value = ''
     }, [isOpen]
     );
@@ -25,7 +25,7 @@ function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar }) {
         onClose={onClose}
         onSubmit={handleSubmit}>
         <input
-          class="popup__input popup__input_type_link"
+          className="popup__input popup__input_type_link"
           id="input-avatarLink"
           required
           type="url"
@@ -34,7 +34,7 @@ function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar }) {
           ref={avatarRef}>
         </input>
         <span
-          class="popup__error input-avatarLink-error">
+          className="popup__error input-avatarLink-error">
         </span>
       </PopupWithForm>
     );

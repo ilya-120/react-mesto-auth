@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import PopupWithForm from './PopupWithForm.js';
 import { CurrentUserContext } from '../contexts/CurrentUserContext.js';
 
 function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
     // Подписка на контекст
-    const currentUser = React.useContext(CurrentUserContext);
-    const [name, setName] = React.useState('');
-    const [description, setDescription] = React.useState('');
+    const currentUser = useContext(CurrentUserContext);
+    const [name, setName] = useState('');
+    const [description, setDescription] = useState('');
 
     function handleChangeName(evt) {
         setName(evt.target.value)
@@ -29,7 +29,7 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
     // После загрузки текущего пользователя из API
     // его данные будут использованы в управляемых компонентах.
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (isOpen) {
             setName(currentUser.name)
             setDescription(currentUser.about)
@@ -45,7 +45,7 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
             onClose={onClose}
             onSubmit={handleSubmit}>
             <input
-                className="popup__input popup__input_type_title"
+                classNameName="popup__input popup__input_type_title"
                 id="input-names"
                 type="text"
                 name="name"
@@ -57,10 +57,10 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
                 onChange={handleChangeName}>
             </input>
             <span
-                class="popup__error input-names-error">
+                className="popup__error input-names-error">
             </span>
             <input
-                class="popup__input popup__input_type_subtitle"
+                className="popup__input popup__input_type_subtitle"
                 id="input-about"
                 type="text"
                 name="about"
@@ -72,7 +72,7 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
                 onChange={handleChangeDescription}>
             </input>
             <span
-                class="popup__error input-about-error"></span>
+                className="popup__error input-about-error"></span>
         </PopupWithForm>
     );
 }

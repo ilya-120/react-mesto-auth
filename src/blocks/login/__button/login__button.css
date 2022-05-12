@@ -1,0 +1,12 @@
+.login__button {
+  height: 50px;
+  margin-top: 216px;
+  font-size: 18px;
+  line-height: 1.22;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.login__button:hover {
+  opacity: 0.85;
+}

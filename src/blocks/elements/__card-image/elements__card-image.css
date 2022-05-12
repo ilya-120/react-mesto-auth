@@ -1,0 +1,11 @@
+.elements__card-image {
+  width: 282px;
+  height: 282px;
+  object-fit: cover;
+}
+
+.elements__card-image:hover {
+  opacity: 0.95;
+  transition: opacity 0.3s;
+  cursor: zoom-in;
+}

@@ -1,0 +1,11 @@
+.popup__container-submit-button_disabled {
+  opacity: 0.2;
+  border: 1px solid #000000;
+  border-radius: 2px;
+  background-color: white;
+  color: #000000;
+}
+.popup__container-submit-button_disabled:hover {
+  opacity: 0.2;
+  cursor: default;
+}

@@ -5,3 +5,11 @@
   line-height: 1.21;
   margin: 0 auto 46px;
 }
+
+@media screen and (max-width: 767px) {
+  .login__title {
+    font-size: 20px;
+  line-height: 1.20;
+  }
+}
+

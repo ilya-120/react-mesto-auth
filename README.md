@@ -1,9 +1,9 @@
-Проектная работа №10, #11
-# Проект: Место-Реакт
+Проектная работа №12
+# Проект: Место-Реакт с авторизацией и регистрацией
 
 **Деплой проекта на Github Pages**
 
-* [Ссылка](https://ilya-120.github.io/mesto-react/)
+* [Ссылка](https://ilya-120.github.io/react-mesto-auth/)
 
 
 **Выполнение проекта по заданию.**
@@ -44,3 +44,4 @@ Mesto: интерактивная страница позволяет:
 * [Ссылка на макет в Figma](https://www.figma.com/file/bjyvbKKJN2naO0ucURl2Z0/JavaScript.-Sprint-5?node-id=0%3A1)
 * [Ссылка на макет в Figma](https://www.figma.com/file/kRVLKwYG3d1HGLvh7JFWRT/JavaScript.-Sprint-6?node-id=0%3A1)
 * [Ссылка на макет в Figma](https://www.figma.com/file/PSdQFRHoxXJFs2FH8IXViF/JavaScript-9-sprint?node-id=0%3A1)
+* [Ссылка на макет в Figma](https://www.figma.com/file/5H3gsn5lIGPwzBPby9jAOo/Sprint-14-RU?node-id=0%3A1)

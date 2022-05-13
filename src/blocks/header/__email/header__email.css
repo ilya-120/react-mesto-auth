@@ -4,4 +4,13 @@
   font-size: 18px;
   line-height: 1.22;
   margin-right: 24px;
+  margin-bottom: 40px;
+  margin-top: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .header__email {
+    font-size: 14px;
+    line-height: 1.21;
+  }
 }

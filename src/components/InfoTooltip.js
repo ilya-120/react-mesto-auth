@@ -1,3 +1,4 @@
+import React from 'react';
 import successIcon from '../images/Union.svg';
 import errorIcon from '../images/Union_error.svg';
 

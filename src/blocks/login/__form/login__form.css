@@ -4,3 +4,16 @@
   align-items: stretch;
   width: 358px;
 }
+
+@media screen and (max-width: 999px) {
+  .login__form {
+    max-width: 85%;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .login__form {
+    max-width: 320px;
+  }
+}

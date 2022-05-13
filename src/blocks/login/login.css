@@ -5,3 +5,15 @@
   align-items: center;
   padding-top: 60px;
 }
+@media screen and (max-width: 999px) {
+  .login {
+    max-width: 85%;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .login {
+    max-width: 320px;
+  }
+}

@@ -33,7 +33,7 @@ Mesto: интерактивная страница позволяет:
 
 ### Инструкция по установке:
 
-* git clone https://github.com/ilya-120/mesto-react.git
+* git clone https://github.com/ilya-120/react-mesto-auth
 * cd mesto-react
 * npm install
 * npm build — собирает проект

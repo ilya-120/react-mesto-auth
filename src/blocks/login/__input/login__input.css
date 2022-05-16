@@ -1,15 +1,31 @@
 .login__input {
   border: none;
-  border-bottom: 2px solid rgba(204, 204, 204, 1);
+  border-bottom: 2px solid #CCCCCC;
+  border-radius: 0;
   background: none;
-  color: rgba(204, 204, 204, 1);
+  color: #CCCCCC;
   font-size: 14px;
   line-height: 1.21;
   outline: none;
   height: 27px;
   margin-bottom: 26px;
+  padding: 0;
 }
 
 .login__input:last-of-type {
   margin: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .login__input {
+   margin-left: 30px;
+   margin-right: 30px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .login__input:last-of-type {
+   margin-left: 30px;
+   margin-right: 30px;
+  }
 }

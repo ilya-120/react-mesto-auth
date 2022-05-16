@@ -45,7 +45,7 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
             onClose={onClose}
             onSubmit={handleSubmit}>
             <input
-                classNameName="popup__input popup__input_type_title"
+                className="popup__input popup__input_type_title"
                 id="input-names"
                 type="text"
                 name="name"

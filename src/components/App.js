@@ -31,6 +31,7 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [email, setEmail] = useState('');
   const navigate = useNavigate();
+  const [isMenuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const jwt = localStorage.getItem('jwt');
@@ -44,7 +45,7 @@ function App() {
           }
         })
         .catch((err) => {
-          console.log(`Ошибка: ${err}`);
+          console.log(`Ошибка проверки токена: ${err}`);
           setLoggedIn(false);
         });
     }
@@ -146,6 +147,10 @@ function App() {
       })
   }
 
+  function handleMenuOpen() {
+    setMenuOpen(!isMenuOpen);
+  }
+
   function handleEditAvatarClick() {
     setIsEditAvatarPopupOpen(true)
   }
@@ -219,7 +224,14 @@ function App() {
             <Route path="/"
               element={
                 <>
-                  <Header email={email} title="Выйти" to="/sign-in" onClick={onSignOut} />
+                  <Header email={email}
+                    title="Выйти"
+                    to="/sign-in"
+                    onClick={onSignOut}
+                    loggedIn={loggedIn}
+                    isMenuOpen={isMenuOpen}
+                    onClicOpen={handleMenuOpen}
+                  />
                   <ProtectedRoute
                     loggedIn={loggedIn}
                     component={Main}
@@ -237,7 +249,11 @@ function App() {
             <Route path={loggedIn ? '' : '/sign-in'}
               element={
                 <>
-                  <Header title="Регистрация" to="/sign-up" />
+                  <Header
+                    title="Регистрация"
+                    to="/sign-up"
+                    loggedIn={loggedIn}
+                  />
                   <Login onLogin={onLogin} />
                 </>
               }
@@ -245,7 +261,11 @@ function App() {
             <Route path={loggedIn ? '' : '/sign-up'}
               element={
                 <>
-                  <Header title="Войти" to="/sign-in" />
+                  <Header
+                    title="Войти"
+                    to="/sign-in"
+                    loggedIn={loggedIn}
+                  />
                   <Register onRegister={onRegister} />
                 </>
               }

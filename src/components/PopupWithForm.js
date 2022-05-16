@@ -1,8 +1,14 @@
 import React from 'react';
 
 function PopupWithForm({name, isOpen, onClose, title, buttonTitle, onSubmit, children}) {
+  const handleClickOnBackground = (evt) => {
+    if (evt.target === evt.currentTarget) {
+      onClose();
+    }
+  };
+
     return (
-      <div className={`popup ${isOpen && 'popup_opened'}`} id={`popup-${name}`}>
+      <div className={`popup ${isOpen && 'popup_opened'}`} id={`popup-${name}`} onClick={handleClickOnBackground}>
         <div className="popup__container">
           <button
             className="popup__container-close-button"

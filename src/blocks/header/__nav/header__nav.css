@@ -1,5 +1,31 @@
 .header__nav {
   display: flex;
   flex-direction: row;
+  margin-bottom: 40px;
+}
+
+.header__nav_isloggedIn {
+  display: flex;
+  flex-direction: row;
   align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  .header__nav_isloggedIn {
+    display: grid;
+    order: -1;
+    border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+    width: 320px;
+    justify-items: center;
+    padding-top: 40px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header__nav_isMenuClose {
+    height: 0;
+    width: 0;
+    z-index: -1;
+    padding-top: 0;
+  }
 }

@@ -1,0 +1,17 @@
+@media screen and (max-width: 767px) {
+.header__button_action_open {
+  width: 24px;
+  height: 6px;
+  background-color: rgba(0,0,0,0);
+  border-bottom: 3px solid #FFFFFF;
+  border-top: 3px solid #FFFFFF;
+  outline: none;
+  background: none;
+  list-style-type: none;
+  margin-right: 30px;
+}
+
+.header__button_action_open:last-of-type {
+  border-top: none;
+}
+}

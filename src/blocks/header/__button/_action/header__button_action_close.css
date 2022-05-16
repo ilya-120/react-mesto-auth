@@ -1,0 +1,12 @@
+@media screen and (max-width: 767px) {
+  .header__button_action_close {
+    width: 20px;
+    height: 20px;
+    background-image: url(../../../../images/Close-Icon.svg);
+    background-color: rgba(0, 0, 0, 0);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-right: 30px;
+  }
+}

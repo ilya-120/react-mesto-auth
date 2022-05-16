@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "962c94a3770f291f1514",
-    "url": "/react-mesto-auth/static/css/main.171c6928.chunk.css"
+    "revision": "babfb8986b900c6f3aac",
+    "url": "/react-mesto-auth/static/css/main.238a998d.chunk.css"
   },
   {
-    "revision": "962c94a3770f291f1514",
-    "url": "/react-mesto-auth/static/js/main.962c94a3.chunk.js"
+    "revision": "babfb8986b900c6f3aac",
+    "url": "/react-mesto-auth/static/js/main.babfb898.chunk.js"
   },
   {
-    "revision": "4e9aafb99959cf9fe670",
-    "url": "/react-mesto-auth/static/js/1.4e9aafb9.chunk.js"
+    "revision": "2d281c672a566deb1a05",
+    "url": "/react-mesto-auth/static/js/1.2d281c67.chunk.js"
   },
   {
     "revision": "42b33c672a7dd1217df2",
     "url": "/react-mesto-auth/static/js/2.42b33c67.chunk.js"
   },
   {
-    "revision": "97ce30aad43594a4975f",
-    "url": "/react-mesto-auth/static/js/runtime~main.97ce30aa.js"
+    "revision": "f05032d8a5d884719911",
+    "url": "/react-mesto-auth/static/js/runtime~main.f05032d8.js"
   },
   {
     "revision": "7baba3c1428ee943536a8022d42f0985",
@@ -44,47 +44,47 @@ self.__precacheManifest = [
     "url": "/react-mesto-auth/static/media/Inter-Medium.75db5319.woff2"
   },
   {
-    "revision": "c0638bea87a05fdfa2bb3bba2efe54e4",
-    "url": "/react-mesto-auth/static/media/Inter-Medium.c0638bea.woff"
-  },
-  {
     "revision": "3ac83020fe53b617b79b5e2ad66764af",
     "url": "/react-mesto-auth/static/media/Inter-Regular.3ac83020.woff"
-  },
-  {
-    "revision": "d0b121f3a9d3d88afdfd6902d31ee9a0",
-    "url": "/react-mesto-auth/static/media/Inter-Black.d0b121f3.woff"
-  },
-  {
-    "revision": "b05083e51f8e21ef50c2b78b29bb740c",
-    "url": "/react-mesto-auth/static/media/Edit-Button.b05083e5.svg"
-  },
-  {
-    "revision": "d476a8b86d0b656cfa463c1148e96069",
-    "url": "/react-mesto-auth/static/media/Vector.d476a8b8.svg"
-  },
-  {
-    "revision": "00b1c22a19c7a1e64f19b1fbacc3a301",
-    "url": "/react-mesto-auth/static/media/Heart.00b1c22a.svg"
-  },
-  {
-    "revision": "3d813f810a41032c140568c878fd7d85",
-    "url": "/react-mesto-auth/static/media/Heart_Activ.3d813f81.svg"
-  },
-  {
-    "revision": "cb0f2bbfd915a7bfa586c3a3bd2efc48",
-    "url": "/react-mesto-auth/static/media/Close-Icon.cb0f2bbf.svg"
-  },
-  {
-    "revision": "b2fce4ac45f3d116cd48ec8d068ab723",
-    "url": "/react-mesto-auth/static/media/Add-Button.b2fce4ac.svg"
   },
   {
     "revision": "e0270e6710268c67a26289e12877ccbb",
     "url": "/react-mesto-auth/static/media/Add-Button-mini.e0270e67.svg"
   },
   {
-    "revision": "90ecd130fa8d9355a49ee2926e50b44d",
+    "revision": "d0b121f3a9d3d88afdfd6902d31ee9a0",
+    "url": "/react-mesto-auth/static/media/Inter-Black.d0b121f3.woff"
+  },
+  {
+    "revision": "b2fce4ac45f3d116cd48ec8d068ab723",
+    "url": "/react-mesto-auth/static/media/Add-Button.b2fce4ac.svg"
+  },
+  {
+    "revision": "c0638bea87a05fdfa2bb3bba2efe54e4",
+    "url": "/react-mesto-auth/static/media/Inter-Medium.c0638bea.woff"
+  },
+  {
+    "revision": "b05083e51f8e21ef50c2b78b29bb740c",
+    "url": "/react-mesto-auth/static/media/Edit-Button.b05083e5.svg"
+  },
+  {
+    "revision": "3d813f810a41032c140568c878fd7d85",
+    "url": "/react-mesto-auth/static/media/Heart_Activ.3d813f81.svg"
+  },
+  {
+    "revision": "00b1c22a19c7a1e64f19b1fbacc3a301",
+    "url": "/react-mesto-auth/static/media/Heart.00b1c22a.svg"
+  },
+  {
+    "revision": "d476a8b86d0b656cfa463c1148e96069",
+    "url": "/react-mesto-auth/static/media/Vector.d476a8b8.svg"
+  },
+  {
+    "revision": "cb0f2bbfd915a7bfa586c3a3bd2efc48",
+    "url": "/react-mesto-auth/static/media/Close-Icon.cb0f2bbf.svg"
+  },
+  {
+    "revision": "d1b968400d33b22c07f98ee01c0d109a",
     "url": "/react-mesto-auth/index.html"
   }
 ];

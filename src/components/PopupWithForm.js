@@ -18,7 +18,7 @@ function PopupWithForm({name, isOpen, onClose, title, buttonTitle, onSubmit, chi
           <h2 className="popup__container-title">{title}</h2>
           <form name={name} className={`popup__container-form popup__${name}`} onSubmit={onSubmit}>
             {children}
-            <button type="submit" className="popup__container-submit-button" value="Да">{buttonTitle}</button>
+            <button type="submit" className="popup__container-submit-button">{buttonTitle}</button>
           </form>
         </div>
       </div>

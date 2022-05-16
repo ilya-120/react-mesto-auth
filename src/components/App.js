@@ -219,7 +219,7 @@ function App() {
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="root">
-        <div class="page">
+        <div className="page">
           <Routes>
             <Route path="/"
               element={

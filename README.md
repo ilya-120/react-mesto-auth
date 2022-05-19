@@ -34,7 +34,7 @@ Mesto: интерактивная страница позволяет:
 ### Инструкция по установке:
 
 * git clone https://github.com/ilya-120/react-mesto-auth
-* cd mesto-react
+* cd react-mesto-auth
 * npm install
 * npm build — собирает проект
 

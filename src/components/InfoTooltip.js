@@ -1,16 +1,11 @@
 import React from 'react';
 import successIcon from '../images/Union.svg';
 import errorIcon from '../images/Union_error.svg';
+import Popup from './Popup';
 
-function InfoTooltip({ isOpen, onClose, isSuccess }) {
+function InfoTooltip({ name, isOpen, onClose, isSuccess }) {
   return (
-    <div className={`popup ${isOpen && 'popup_opened'}`}>
-        <div className="popup__container">
-          <button
-            className="popup__container-close-button"
-            type="button"
-            onClick={onClose}
-          />
+    <Popup isOpen={isOpen} name={name} onClose={onClose}>
         <img
           src={isSuccess ? successIcon : errorIcon}
           alt={
@@ -23,8 +18,7 @@ function InfoTooltip({ isOpen, onClose, isSuccess }) {
             ? 'Вы успешно зарегистрировались!'
             : 'Что-то пошло не так! Попробуйте ещё раз.'}
         </h3>
-      </div>
-    </div>
+     </Popup>
   );
 };
 

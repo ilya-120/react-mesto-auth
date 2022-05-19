@@ -1,30 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
+import UseForm from './UseForm';
 
-function Login({ onLogin }) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  function handleChangeEmail(evt) {
-    setEmail(evt.target.value);
-  }
-
-  function handleChangePassword(evt) {
-    setPassword(evt.target.value);
-  }
-
+function Login({ onLogin, onLoading }) {
+  const { enteredValues, errors, isFormValid, handleChange } = UseForm({});
   function handleSubmit(evt) {
     evt.preventDefault();
-    if (!email || !password) {
+    if (!enteredValues.email || !enteredValues.password || !isFormValid) {
+      console.log(isFormValid);
       return;
     }
-    onLogin(email, password);
+    onLogin(enteredValues.email, enteredValues.password);
   }
 
   return (
     <section className="login">
       <h2 className="login__title">Вход</h2>
-      <form className="login__form"
+      <form className="form login__form"
         onSubmit={handleSubmit}
+        noValidate
       >
         <input
           className="login__input"
@@ -35,10 +28,10 @@ function Login({ onLogin }) {
           placeholder="Email"
           required
           minLength="2"
-          value={email}
-          onChange={handleChangeEmail}
+          value={enteredValues.email || ''}
+          onChange={handleChange}
         />
-        <span id="email-error" className="login__error" />
+        <span id="email-error" className="login__error">{errors.email}</span>
         <input
           className="login__input"
           aria-label="Пароль"
@@ -49,11 +42,13 @@ function Login({ onLogin }) {
           required
           minLength="6"
           maxLength="200"
-          value={password}
-          onChange={handleChangePassword}
+          value={enteredValues.password || ''}
+          onChange={handleChange}
         />
-        <span id="password-error" className="login__error" />
-        <button type="submit" className="login__button">Войти</button>
+        <span id="password-error" className="login__error">{errors.password}</span>
+        <button
+        type="submit"
+        className="login__button">{onLoading ? "Вход..." : "Войти"}</button>
       </form>
     </section>
   )

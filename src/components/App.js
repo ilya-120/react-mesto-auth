@@ -32,6 +32,7 @@ function App() {
   const [email, setEmail] = useState('');
   const navigate = useNavigate();
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const jwt = localStorage.getItem('jwt');
@@ -72,6 +73,7 @@ function App() {
   }, [])
 
   function onLogin(email, password) {
+    setIsLoading(true);
     auth
       .signin(email, password)
       .then(res => {
@@ -86,10 +88,14 @@ function App() {
         setIsRegistrationSuccessful(false);
         handleInfoTooltip();
         console.log(`Ошибка входа: ${err}`);
-      });
+      })
+      .finally(() => {
+        setIsLoading(false)
+      })
   }
 
   function onRegister(email, password) {
+    setIsLoading(true);
     auth
       .signup(email, password)
       .then(res => {
@@ -98,14 +104,15 @@ function App() {
           navigate('/sign-in');
         } else {
           setIsRegistrationSuccessful(false);
-
         }
       })
       .catch((err) => {
         setIsRegistrationSuccessful(false);
         console.log(`Ошибка регистрации: ${err}`);
       })
-      .finally(() => handleInfoTooltip()
+      .finally(() =>
+      handleInfoTooltip(),
+      setIsLoading(false)
       );
   }
 
@@ -172,6 +179,7 @@ function App() {
   }
 
   function handleUpdateUser(data) {
+    setIsLoading(true);
     api
       .setUserInfo(data)
       .then((user) => {
@@ -181,9 +189,13 @@ function App() {
       .catch((err) => {
         console.log(`неудачно: ${err}`)
       })
+      .finally(() => {
+        setIsLoading(false)
+      })
   }
 
   function handleUpdateAvatar(data) {
+    setIsLoading(true);
     api
       .setAvatar(data)
       .then((userInfoRes) => {
@@ -196,6 +208,7 @@ function App() {
   }
 
   function handleAddPlaceSubmit(data) {
+    setIsLoading(true);
     api
       .postNewCard(data)
       .then((newCard) => {
@@ -204,6 +217,9 @@ function App() {
       })
       .catch((err) => {
         console.log(`ошибка: ${err}`)
+      })
+      .finally(() => {
+        setIsLoading(false)
       })
   }
 
@@ -277,22 +293,26 @@ function App() {
             isOpen={isEditProfilePopupOpen}
             onClose={closeAllPopups}
             onUpdateUser={handleUpdateUser}
+            onLoading={isLoading}
           />
           <AddPlacePopup
             isOpen={isAddPlacePopupOpen}
             onClose={closeAllPopups}
             onAddPlace={handleAddPlaceSubmit}
+            onLoading={isLoading}
           />
           <EditAvatarPopup
             isOpen={isEditAvatarPopupOpen}
             onClose={closeAllPopups}
             onUpdateAvatar={handleUpdateAvatar}
+            onLoading={isLoading}
           />
           <PopupWithConfirm
             isOpen={isConfirmPopupOpen}
             onClose={closeAllPopups}
             onSubmit={handleCardDelete}
             card={removedCardId}
+            onLoading={isLoading}
           />
           <InfoTooltip
             onClose={closeAllPopups}

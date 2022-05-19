@@ -1,10 +1,12 @@
 .login {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-content: space-between;
   align-items: center;
   padding-top: 60px;
 }
+
 @media screen and (max-width: 999px) {
   .login {
     max-width: 85%;
@@ -16,5 +18,27 @@
   .login {
     max-width: 320px;
     padding-top: 40px;
+  }
+}
+
+.login__error {
+  position: absolute;
+  margin-top: 29px;
+  min-height: 30px;
+  max-width: 358px;
+  color: red;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.21;
+}
+
+.login__error:last-of-type {
+  margin-top: 84px;
+}
+
+@media screen and (max-width: 767px) {
+  .login__error {
+    max-width: 320px;
+    margin: 29px 30px 0;
   }
 }

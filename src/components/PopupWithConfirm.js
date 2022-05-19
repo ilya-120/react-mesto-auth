@@ -1,7 +1,7 @@
 import React from 'react';
 import PopupWithForm from './PopupWithForm.js';
 
-function PopupWithConfirm({ isOpen, onClose, card, onSubmit }) {
+function PopupWithConfirm({ isOpen, onClose, card, onSubmit, onLoading }) {
 
   function handleSubmit(evt) {
     evt.preventDefault()
@@ -12,11 +12,10 @@ function PopupWithConfirm({ isOpen, onClose, card, onSubmit }) {
     <PopupWithForm
       name="confirm"
       title="Вы уверены?"
-      buttonTitle="Да"
+      onLoading={onLoading ? "Удаление..." : "Да"}
       isOpen={isOpen}
       onClose={onClose}
-      onSubmit={handleSubmit}
-    >
+      onSubmit={handleSubmit}>
     </PopupWithForm>
   );
 }

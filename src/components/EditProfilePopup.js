@@ -1,80 +1,73 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import PopupWithForm from './PopupWithForm.js';
 import { CurrentUserContext } from '../contexts/CurrentUserContext.js';
+import UseForm from './UseForm';
 
-function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
-    // Подписка на контекст
-    const currentUser = useContext(CurrentUserContext);
-    const [name, setName] = useState('');
-    const [description, setDescription] = useState('');
+function EditProfilePopup({ isOpen, onClose, onUpdateUser, onLoading }) {
+  // Подписка на контекст
+  const currentUser = useContext(CurrentUserContext);
+  const { enteredValues, errors, handleChange, isFormValid, resetForm } = UseForm();
 
-    function handleChangeName(evt) {
-        setName(evt.target.value)
-    }
+  function handleSubmit(evt) {
+    // Запрещаем браузеру переходить по адресу формы
+    evt.preventDefault()
 
-    function handleChangeDescription(evt) {
-        setDescription(evt.target.value)
-    }
+    // Передаём значения управляемых компонентов во внешний обработчик
+    onUpdateUser({
+      name: enteredValues.name,
+      description: enteredValues.about,
+    });
+  }
+  // После загрузки текущего пользователя из API
+  // его данные будут использованы в управляемых компонентах.
 
-    function handleSubmit(evt) {
-        // Запрещаем браузеру переходить по адресу формы
-        evt.preventDefault()
+  useEffect(() => {
+    currentUser ? resetForm(currentUser) : resetForm();
+  }, [resetForm, isOpen, currentUser]);
 
-        // Передаём значения управляемых компонентов во внешний обработчик
-        onUpdateUser({
-            name,
-            description,
-        });
-    }
-    // После загрузки текущего пользователя из API
-    // его данные будут использованы в управляемых компонентах.
-
-    useEffect(() => {
-        if (isOpen) {
-            setName(currentUser.name)
-            setDescription(currentUser.about)
-        }
-    }, [currentUser, isOpen])
-
-    return (
-        <PopupWithForm
-            name="edit-card"
-            title="Редактировать профиль"
-            buttonTitle="Сохранить"
-            isOpen={isOpen}
-            onClose={onClose}
-            onSubmit={handleSubmit}>
-            <input
-                className="popup__input popup__input_type_title"
-                id="input-names"
-                type="text"
-                name="name"
-                required
-                minLength="2"
-                maxLength="40"
-                placeholder="Имя"
-                value={name || ''}
-                onChange={handleChangeName}>
-            </input>
-            <span
-                className="popup__error input-names-error">
-            </span>
-            <input
-                className="popup__input popup__input_type_subtitle"
-                id="input-about"
-                type="text"
-                name="about"
-                required
-                minLength="2"
-                maxLength="200"
-                placeholder="О себе"
-                value={description || ''}
-                onChange={handleChangeDescription}>
-            </input>
-            <span
-                className="popup__error input-about-error"></span>
-        </PopupWithForm>
-    );
+  return (
+    <PopupWithForm
+      name="edit-card"
+      title="Редактировать профиль"
+      onLoading={onLoading ? 'Сохранение...' : 'Сохранить'}
+      isOpen={isOpen}
+      onClose={onClose}
+      onSubmit={handleSubmit}
+      disabled={!isFormValid}>
+      <input
+        className="popup__input popup__input_type_title"
+        id="input-names"
+        type="text"
+        name="name"
+        required
+        minLength="2"
+        maxLength="40"
+        placeholder="Имя"
+        value={enteredValues.name || ''}
+        onChange={handleChange}>
+      </input>
+      <span
+        className="popup__error">
+          {errors.name}
+      </span>
+      <input
+        className="popup__input popup__input_type_subtitle"
+        id="input-about"
+        type="text"
+        name="about"
+        required
+        minLength="2"
+        maxLength="200"
+        placeholder="О себе"
+        value={enteredValues.about || ''}
+        onChange={handleChange}>
+      </input>
+      <span
+        className="popup__error">
+          {errors.about}
+        </span>
+    </PopupWithForm>
+  );
 }
 
 export default EditProfilePopup;

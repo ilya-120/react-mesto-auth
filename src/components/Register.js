@@ -1,31 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import UseForm from './UseForm';
 
-function Register({ onRegister }) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  function handleChangeEmail(evt) {
-    setEmail(evt.target.value);
-  }
-
-  function handleChangePassword(evt) {
-    setPassword(evt.target.value);
-  }
-
+function Register({ onRegister, onLoading }) {
+  const { enteredValues, errors, isFormValid, handleChange } = UseForm({});
   function handleSubmit(evt) {
     evt.preventDefault();
-    if (!email || !password) {
+    if (!enteredValues.email || !enteredValues.password || !isFormValid) {
+      console.log(isFormValid);
       return;
     }
-    onRegister(email, password);
+    onRegister(enteredValues.email, enteredValues.password);
   }
 
   return (
     <section className="login">
       <h2 className="login__title">Регистрация</h2>
-      <form className="login__form"
+      <form className="form login__form"
         onSubmit={handleSubmit}
+        noValidate
       >
         <input
           className="login__input"
@@ -37,10 +30,10 @@ function Register({ onRegister }) {
           required
           minLength="2"
           maxLength="50"
-          onChange={handleChangeEmail}
-          value={email}
+          onChange={handleChange}
+          value={enteredValues.email || ''}
         />
-        <span id="email-error" className="login__error" />
+        <span id="email-error" className="login__error">{errors.email}</span>
         <input
           className="login__input"
           aria-label="Пароль"
@@ -51,11 +44,11 @@ function Register({ onRegister }) {
           required
           minLength="6"
           maxLength="200"
-          onChange={handleChangePassword}
-          value={password}
+          onChange={handleChange}
+          value={enteredValues.password || ''}
         />
-        <span id="password-error" className="login__error" />
-        <button type="submit" className="login__button">Зарегистрироваться</button>
+        <span id="password-error" className="login__error">{errors.password}</span>
+        <button type="submit" className="login__button">{onLoading ? "Регистрация..." : "Зарегистрироваться"}</button>
       </form>
       <p className="login__subtitle">Уже зарегистрированы? <Link to="/sign-in" className="login__link">Войти</Link></p>
 

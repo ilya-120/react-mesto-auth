@@ -1,28 +1,27 @@
 import React from 'react';
+import Popup from './Popup';
 
-function PopupWithForm({name, isOpen, onClose, title, buttonTitle, onSubmit, children}) {
-  const handleClickOnBackground = (evt) => {
-    if (evt.target === evt.currentTarget) {
-      onClose();
-    }
-  };
+function PopupWithForm({ name, isOpen, onClose, title, buttonTitle, onSubmit, disabled, onLoading, children }) {
 
-    return (
-      <div className={`popup ${isOpen && 'popup_opened'}`} id={`popup-${name}`} onClick={handleClickOnBackground}>
-        <div className="popup__container">
-          <button
-            className="popup__container-close-button"
-            type="button"
-            onClick={onClose}
-          />
-          <h2 className="popup__container-title">{title}</h2>
-          <form name={name} className={`popup__container-form popup__${name}`} onSubmit={onSubmit}>
-            {children}
-            <button type="submit" className="popup__container-submit-button">{buttonTitle}</button>
-          </form>
-        </div>
-      </div>
-    )
-  }
+  return (
+    <Popup isOpen={isOpen} name={name} onClose={onClose}>
+      <h2 className="popup__container-title">{title}</h2>
+      <form
+        name={name}
+        className={`form popup__container-form popup__${name}`}
+        onSubmit={onSubmit}
+        noValidate>
+        {children}
+        <button
+          type="submit"
+          disabled={disabled}
+          className={`popup__container-submit-button ${disabled && 'popup__container-submit-button_disabled'}`}>
+          {buttonTitle}
+          {onLoading}
+        </button>
+      </form>
+    </Popup>
+  )
+}
 
-  export default PopupWithForm
+export default PopupWithForm

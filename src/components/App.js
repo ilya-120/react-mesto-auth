@@ -111,8 +111,8 @@ function App() {
         console.log(`Ошибка регистрации: ${err}`);
       })
       .finally(() =>
-      handleInfoTooltip(),
-      setIsLoading(false)
+        handleInfoTooltip(),
+        setIsLoading(false)
       );
   }
 
@@ -205,6 +205,9 @@ function App() {
       .catch((err) => {
         console.log(`ошибка: ${err}`)
       })
+      .finally(() => {
+        setIsLoading(false)
+      })
   }
 
   function handleAddPlaceSubmit(data) {
@@ -270,7 +273,9 @@ function App() {
                     to="/sign-up"
                     loggedIn={loggedIn}
                   />
-                  <Login onLogin={onLogin} />
+                  <Login
+                    onLogin={onLogin}
+                    onLoading={isLoading} />
                 </>
               }
             />
@@ -282,7 +287,9 @@ function App() {
                     to="/sign-in"
                     loggedIn={loggedIn}
                   />
-                  <Register onRegister={onRegister} />
+                  <Register
+                    onRegister={onRegister}
+                    onLoading={isLoading} />
                 </>
               }
             />

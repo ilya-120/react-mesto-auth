@@ -1,7 +1,7 @@
 {
   "main.css": "/react-mesto-auth/static/css/main.6255d624.chunk.css",
-  "main.js": "/react-mesto-auth/static/js/main.e519a3a9.chunk.js",
-  "main.js.map": "/react-mesto-auth/static/js/main.e519a3a9.chunk.js.map",
+  "main.js": "/react-mesto-auth/static/js/main.7822484f.chunk.js",
+  "main.js.map": "/react-mesto-auth/static/js/main.7822484f.chunk.js.map",
   "static/js/1.c6b5a3e0.chunk.js": "/react-mesto-auth/static/js/1.c6b5a3e0.chunk.js",
   "static/js/1.c6b5a3e0.chunk.js.map": "/react-mesto-auth/static/js/1.c6b5a3e0.chunk.js.map",
   "static/js/2.04c64c94.chunk.js": "/react-mesto-auth/static/js/2.04c64c94.chunk.js",
@@ -11,9 +11,9 @@
   "static/media/logo.svg": "/react-mesto-auth/static/media/logo.7baba3c1.svg",
   "static/media/Union.svg": "/react-mesto-auth/static/media/Union.e38b395c.svg",
   "static/media/Union_error.svg": "/react-mesto-auth/static/media/Union_error.4072126c.svg",
-  "static/media/index.css": "/react-mesto-auth/static/media/Inter-Regular.3ac83020.woff",
+  "static/media/index.css": "/react-mesto-auth/static/media/Inter-Black.d0b121f3.woff",
   "static/css/main.6255d624.chunk.css.map": "/react-mesto-auth/static/css/main.6255d624.chunk.css.map",
   "index.html": "/react-mesto-auth/index.html",
-  "precache-manifest.2fa2e37141828118e687cac065d36174.js": "/react-mesto-auth/precache-manifest.2fa2e37141828118e687cac065d36174.js",
+  "precache-manifest.f4dff2ae7d9e580b2b09a843ec81c7e0.js": "/react-mesto-auth/precache-manifest.f4dff2ae7d9e580b2b09a843ec81c7e0.js",
   "service-worker.js": "/react-mesto-auth/service-worker.js"
 }
